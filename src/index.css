@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 225 45% 4%;
+    --foreground: 230 60% 97%;
+    --card: 225 40% 6%;
+    --card-foreground: 230 60% 97%;
+    --popover: 225 40% 6%;
+    --popover-foreground: 230 60% 97%;
+    --primary: 227 100% 65%;
+    --primary-foreground: 230 60% 97%;
+    --secondary: 225 30% 12%;
+    --secondary-foreground: 230 60% 97%;
+    --muted: 225 30% 12%;
+    --muted-foreground: 230 30% 70%;
+    --accent: 227 100% 65%;
+    --accent-foreground: 230 60% 97%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 230 30% 15%;
+    --input: 230 30% 15%;
+    --ring: 227 100% 65%;
+    --radius: 1.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', sans-serif;
+  }
+  
+  code, pre, .mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply relative overflow-hidden;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.55);
+  }
+  
+  .glass-card-strong {
+    @apply relative overflow-hidden;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 32px 90px rgba(0, 0, 0, 0.6);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, #F2F5FF 0%, #A7B1D8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .accent-gradient {
+    background: linear-gradient(135deg, #4F6DFF 0%, #7B8FFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .btn-primary {
+    @apply relative overflow-hidden px-6 py-3 rounded-full font-medium transition-all duration-300;
+    background: linear-gradient(135deg, #4F6DFF 0%, #3D5AEB 100%);
+    color: white;
+    box-shadow: 0 8px 32px rgba(79, 109, 255, 0.35);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(79, 109, 255, 0.5);
+  }
+  
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+  
+  .micro-label {
+    @apply text-xs uppercase tracking-[0.14em] font-medium;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #A7B1D8;
+  }
+  
+  .overlay-gradient {
+    background: linear-gradient(180deg, rgba(7, 10, 18, 0) 0%, rgba(7, 10, 18, 0.85) 100%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* Custom cursor styles */
+.custom-cursor {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s, height 0.15s, border-color 0.15s;
+}
+
+.cursor-ring.hover {
+  width: 60px;
+  height: 60px;
+  border-color: #4F6DFF;
+}
+
+/* Gradient mesh background */
+.gradient-mesh {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: 
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(79, 109, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(79, 109, 255, 0.08) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 60% at 50% 80%, rgba(123, 143, 255, 0.06) 0%, transparent 40%),
+    radial-gradient(ellipse 40% 30% at 70% 20%, rgba(79, 109, 255, 0.1) 0%, transparent 35%),
+    #070A12;
+}
+
+/* Grain overlay */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070A12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(79, 109, 255, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(79, 109, 255, 0.6);
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(79, 109, 255, 0.3);
+  color: #F2F5FF;
+}
