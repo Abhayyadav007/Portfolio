@@ -45,7 +45,7 @@ export function Footer() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-[#A7B1D8] mb-8"
           >
-            Built with React + Framer Motion. Designed in the browser.
+            Built with React + Framer Motion.
           </motion.p>
 
           {/* Footer Links */}
