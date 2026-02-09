@@ -254,21 +254,19 @@ export function Projects() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2 sm:pt-4">
-                  <motion.button
-                    className="btn-primary flex items-center justify-center gap-2"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <span>View Live</span>
-                    <ExternalLink className="w-4 h-4" />
-                  </motion.button>
-                  <motion.button
-                    className="px-6 py-3 rounded-full border border-white/20 text-white font-medium hover:bg-white/5 transition-colors"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    Read Case Study
-                  </motion.button>
+                  {/* <motion.button */}
+                  {/*   className="btn-primary flex items-center justify-center gap-2" */}
+                  {/*   whileHover={{ scale: 1.02 }} */}
+                  {/*   whileTap={{ scale: 0.98 }} */}
+                  {/* > */}
+                  {/* </motion.button> */}
+                  {/* <motion.button */}
+                  {/*   className="px-6 py-3 rounded-full border border-white/20 text-white font-medium hover:bg-white/5 transition-colors" */}
+                  {/*   whileHover={{ scale: 1.02 }} */}
+                  {/*   whileTap={{ scale: 0.98 }} */}
+                  {/* > */}
+                  {/*   Read Case Study */}
+                  {/* </motion.button> */}
                 </div>
               </div>
             </div>
