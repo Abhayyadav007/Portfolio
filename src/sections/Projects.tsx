@@ -86,7 +86,14 @@ function ProjectCard({
             className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
             <div className="w-14 h-14 rounded-full bg-[#4F6DFF] flex items-center justify-center shadow-lg shadow-[#4F6DFF]/40">
-              <ExternalLink className="w-6 h-6 text-white" />
+
+              <a
+                href="https://github.com/Abhayyadav007/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="w-6 h-6 text-white" />
+              </a>
             </div>
           </motion.div>
         </div>
